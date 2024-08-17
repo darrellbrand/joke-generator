@@ -5,7 +5,6 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,10 +25,8 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarColors
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
@@ -103,24 +100,21 @@ fun JokeScreen(joke: State<Joke>, onClick: () -> Unit) {
             )
             Spacer(modifier = Modifier.height(30.dp))
             Card(
-                modifier = Modifier.padding(15.dp)
+                modifier = Modifier.padding(15.dp),
             ) {
                 AnimatedContent(targetState = joke.value, label = "animated text") {
                     it.value?.let {
                         joke.value.value?.let { it1 ->
                             Text(
-                                text = it1, //it1,
+                                text = it1,
                                 style = MaterialTheme.typography.headlineLarge,
                                 modifier = Modifier.padding(15.dp)
                             )
                         }
                     }
                 }
-
             }
-
             Spacer(modifier = Modifier.height(20.dp))
-
         }
     }
 }
