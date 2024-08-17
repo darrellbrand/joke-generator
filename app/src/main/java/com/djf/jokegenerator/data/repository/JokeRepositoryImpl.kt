@@ -10,7 +10,10 @@ class JokeRepositoryImpl(private val apiService: APIService) : JokeRepository {
         try {
             val res = apiService.getRandomJoke()
             if (res.isSuccessful) {
-                return res.body()?.joke
+                val body = res.body()
+                body?.let {
+                    return Joke(icon_url = body.icon_url, url = body.url, value = body.value)
+                }
             }
         } catch (e: Exception) {
             println("Jokerepo exception" + e.message)

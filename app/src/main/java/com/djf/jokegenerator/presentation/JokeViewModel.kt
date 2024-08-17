@@ -29,10 +29,9 @@ class JokeViewModel @Inject constructor(val jokeUseCase: JokeUseCase) : ViewMode
             val joke = jokeUseCase.getRandomJoke()
             joke?.let {
                 _joke.update { joke }
+                println("JOKE= " + joke.value)
             }
         }
     }
-
-    fun onEvent(){}
 
 }

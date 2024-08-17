@@ -6,4 +6,4 @@ data class Joke(
     val value: String? = ""
 )
 
-data class JokeResponse(val joke: Joke)
+//data class JokeResponse(val joke: Joke)
