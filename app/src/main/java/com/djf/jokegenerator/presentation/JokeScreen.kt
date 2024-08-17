@@ -41,7 +41,6 @@ import com.djf.jokegenerator.R
 import com.djf.jokegenerator.domain.util.Joke
 
 @OptIn(ExperimentalMaterial3Api::class)
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun JokeScreen(joke: State<Joke>, onClick: () -> Unit) {
 
